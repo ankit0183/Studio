@@ -1,0 +1,178 @@
+.main_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+   height: 70px;
+  transition: all 0.5s;
+  transition: all 0.5s;
+  padding: 10px 0;
+  background: #fff;
+  z-index: 997;
+ 
+}
+
+.navbar_brand {
+    text-align: left;
+}
+
+.navbarList {
+     position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+.navbarItem {
+      position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+.navbarList a {
+    display: block;
+  position: relative;
+  color: #fff;/*#5c768d;*/
+  padding: 25px 15px; /*12px 15px*/
+  transition: 0.3s;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbarList a:after {
+  display: block;
+  position: relative;
+  color: #5c768d;
+  padding: 12px 15px;
+  transition: 0.3s;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbarList .active > a {
+  color:white;
+  background-color: #428bca;
+  border-radius:50px;
+  text-decoration: none;
+}
+.navbarList .current > a {
+  /*border-bottom: 3px solid #428bca;*/
+  background: #fff;
+  color: #000;
+}
+/*.navbarList .navbarItem a:hover {*/
+/*    color: #e50914;*/
+/*}*/
+
+.navbarItem a:before {
+   
+  
+}
+
+.navbarItem a:hover:before {
+    background: #fff;
+  color: #000;
+}
+
+
+
+.navbarList .navbarItem a:hover{
+    background: #fff;
+  color: #000;
+}
+
+
+.mobile-navbar-btn {
+    display: none;
+}
+
+.mobile-nav-icon {
+    cursor: pointer;
+}
+
+.mobile-navbar-btn .close-outline {
+    display: none;
+}
+
+.mobile-navbar-btn[name="close-outline"] {
+    display: none;
+}
+
+
+@media screen and (max-width: 999px) {
+
+    .main_header {
+        padding: 0 5rem;
+    }
+
+    .mobile-navbar-btn {
+        display: inline-block;
+        z-index: 999;
+        /*border: .1rem solid #161617;*/
+    }
+
+    .mobile-nav-icon {
+        font-size: 4.2rem;
+        color: #161617;
+    }
+
+    .mobile-nav-icon:hover, .close-outline:hover{
+        color: #e50914;
+    }
+
+    /* hide the original nav menu  */
+       .navbarList {
+        width: 25vh;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+       
+        background-image: linear-gradient(to right, #900C3E, #531848);
+        transition: 0.7s;
+        display: flex;
+        justify-content: top;
+        flex-direction: column;
+        text-align: center;
+      
+        visibility: hidden;
+        opacity: 0;
+        z-index: 9999;
+        padding-top: 18px;
+         overflow-y: auto;
+    }
+
+    .navbarList .navbarItem {
+        font-size: 3rem;
+    }
+
+    .navbarList .navbarItem a{
+        font-size: 2rem;
+    }
+
+    .navbarList .navbarItem a:hover {
+        color: #e50914;
+    }
+
+    /*when user click on the open menu icon*/
+    .active .mobile-nav-icon {
+        display: none;
+        font-size: 4.2rem;
+        position: absolute;
+        top: 3%;
+        right: 10%;
+        color: #161617;
+        z-index: 9999;
+    }
+
+    .active .close-outline {
+        display: inline-block;
+    }
+
+    .active .navbarList {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 999;
+    }
+}
